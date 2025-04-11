@@ -11,6 +11,9 @@ from dotenv import load_dotenv
 # Carrega variáveis .env
 load_dotenv()
 TOKEN = os.getenv("DISCORD_TOKEN")
+if TOKEN is None:
+    raise ValueError("DISCORD_TOKEN não está configurado")
+
 WEATHER_TOKEN = os.getenv("OPENWEATHER_TOKEN")
 
 # Intents e criação do bot
